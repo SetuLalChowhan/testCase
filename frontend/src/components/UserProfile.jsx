@@ -2,14 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import Cookies from "universal-cookie";
 
 const UserProfile = () => {
-  const cookies = new Cookies();
-
-  // Get the token from cookies
-  const token = cookies.get("token");
-
   const [user, setUser] = useState({
     name: "",
     email: "",

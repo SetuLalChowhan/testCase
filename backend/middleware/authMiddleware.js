@@ -1,9 +1,7 @@
 const jwt = require('jsonwebtoken');
 const AppError = require('../error/AppError.js');
 const authenticate = (req, res, next) => {
-    console.log(req.cookies) 
     const token = req.cookies.token;
-    console.log(token)
   
     if (!token) {
       return next(new AppError('Not authorized, no token', 401));
